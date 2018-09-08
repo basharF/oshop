@@ -1,3 +1,20 @@
-<p>
-  admin-orders works!
-</p>
+<div *ngIf="orders && users.length" class="row col-10">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Order Date</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td> {{ getUserName(order.userId)}} </td>
+        <td> {{ getUserEmail(order.userId )}} </td>
+        <td>{{ getOrderDate(order.datePlaced) }}</td>
+        <td><a routerLink="/order/summary" [queryParams]="{ orderId: order.$key }">View</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

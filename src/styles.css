@@ -1,4 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
 
-body { padding-top: 80px; }
+*{
+    font-family: 'barlow', sans-serif;
+    font-size: 1.01em;
+    letter-spacing: 1px;
+}
+
+body { padding: 80px 10px; }
+
+.list-group-item.active{
+    background-color: #77947be6;  
+    border-color: #77947be6; 
+  }
+
+.btn-primary {
+    background-color: #77947be6;
+    border-color: #77947be6;
+}
+
+.btn-primary[disabled]
+ {
+    background-color: #77947be6;
+    border-color: #77947be6;
+}
+
+
+
+@media only screen and (max-width: 330px) {
+    *{
+        font-size: 98%;
+    }
+
+    h1{
+        font-size: 20px;
+    }
+
+    .btn-primary{
+        font-size: 12px;
+    }
+
+}

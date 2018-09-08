@@ -1,0 +1,29 @@
+
+.g-login{
+    background-color: rgb(218, 0, 0);
+    max-width: 200px;
+    margin: 3px auto;
+
+
+}
+
+.g-login :hover{
+    background-color: rgb(177, 150, 0);
+}
+
+.fb-login{
+    background-color: #4267b2;
+    margin: 3px auto;
+    max-width: 200px;
+}
+
+.all{
+    margin: auto;
+    width: 40%;
+    padding: 10px;
+    min-width: 230px;
+}
+
+.card{
+    padding-bottom: 30px;
+}

@@ -1,3 +1,53 @@
-<p>
-  check-out works!
-</p>
+<div class="row">
+
+  <div class="col-md-6" style="padding-right: 15px; padding-bottom: 40px;">
+    <ng-container *ngIf="cart">
+      <h3>Order Summary</h3>
+      <p>You have {{ cart.totalItemsCount }} items in your cart.</p>
+      <ul class="list-group list-group-flush">
+        <li *ngFor="let item of cart.items" class="list-group-item">
+          {{ item.quantity}} x {{ item.title }}
+          <div class="float-right">
+            <i> {{item.totalPrice | currency:'USD':true}} </i>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="float-right">Total Price:
+            <b>{{ cart.totalPrice | currency:'USD':true }}</b>
+          </div>
+        </li>
+      </ul>
+    </ng-container>
+  </div>
+
+
+  <div class="col-md-6" style="padding-left: 15px;" *ngIf="cart">
+    <h3>Shipping</h3>
+
+    <form #f="ngForm" class="form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input required name="name" #name="ngModel" [(ngModel)]="shipping.name" class="form-control" type="text" id="name">
+        <div style="height: 25px; font-size: 0.8em; padding:0 10px;" class="alert alert-danger" *ngIf="name.touched && name.invalid">Name is required.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="add1">Address 1</label>
+        <input required placeholder="Line 1" name="addressLine1" #addressLine1="ngModel" [(ngModel)]="shipping.addressLine1" class="form-control"
+          type="text" id="addressLine1">
+        <div style="height: 25px; font-size: 0.8em; padding:0 10px;" class="alert alert-danger" *ngIf="addressLine1.touched && addressLine1.invalid">Address is required.</div>
+        <input placeholder="Line 2" name="addressLine2" #addressLine2="ngModel" [(ngModel)]="shipping.addressLine2" class="form-control"
+          type="text" id="addressLine2">
+      </div>
+
+      <div class="form-group">
+        <label for="city">City</label>
+        <input required name="city" #city="ngModel" [(ngModel)]="shipping.city" class="form-control" type="text" id="city">
+        <div style="height: 25px; font-size: 0.8em; padding:0 10px;" class="alert alert-danger" *ngIf="city.touched && city.invalid">City is required.</div>
+      </div>
+    </form>
+    <button [disabled]="!f.valid" (click)="placeOrder()" class="btn btn-primary">Submit Order</button>
+  </div>
+
+
+</div>

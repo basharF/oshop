@@ -1,4 +1,23 @@
 
-.dropdown-toggle { 
+.dropdown-toggle, .curs { 
   cursor: pointer;
+}
+
+.curs2{
+  cursor: default;
+}
+
+.navbar-brand{
+  color: #95b99ae6;
+}
+
+nav{
+  max-height: 50px;
+}
+
+
+.dropdown-menu{
+  right: 4px;
+    left: auto;
+    position: absolute;
 }

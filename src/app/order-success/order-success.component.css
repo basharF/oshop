@@ -1,0 +1,16 @@
+.con{
+    margin-top: 50px;
+}
+
+.me{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    float: left;
+}
+
+.description{
+    margin-top: 20px;
+    float: left;
+    margin-left: 20px;
+}
